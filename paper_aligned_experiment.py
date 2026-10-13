@@ -100,7 +100,9 @@ def main():
     p100=pd.read_csv(out/"same_event_pairs.csv")
     p5=pd.read_csv(out/"same_event_pairs_within_5km.csv")
     # Filter pair table to the paper's magnitude criterion using pair-level mean magnitude.
-    magcol = "mean_magnitude" if "mean_magnitude" in p100.columns else "mean_magnitude"
+    magcol = "mean_magnitude"
+    if magcol not in p100.columns or magcol not in p5.columns:
+        raise ValueError("Expected mean_magnitude in both pair CSV files.")
     p100=p100[pd.to_numeric(p100[magcol],errors="coerce")>=5].copy()
     p5=p5[pd.to_numeric(p5[magcol],errors="coerce")>=5].copy()
     # Normalize existing pipeline column names.
@@ -111,8 +113,8 @@ def main():
              "n_pairs":int(len(p5)),"n_events":int(p5["event"].nunique()) if "event" in p5 else None,
              "status":"not_estimable_reliably" if len(p5)<30 else "model_evaluation_attempted",
              "reason":"Only 8 pairs are available in the current 5 km subset; an 80/10/10 split would yield about 6 training, 1 validation and 1 test pair. No reliable model comparison is possible."}
-    if len(p5)>=10:
-        primary["evaluation"]=run_models(p5,feature_cols)
+    if len(p5) >= 30:
+        primary["evaluation"] = run_models(p5, feature_cols)
     # Supplementary analysis: existing 100 km data, explicitly marked as not paper protocol.
     supplementary={"protocol":"supplementary only: magnitude >= 5 and site separation <= 100 km; differs from paper's 5 km limit",
                    "n_pairs":int(len(p100)),"n_events":int(p100["event"].nunique()) if "event" in p100 else None,
