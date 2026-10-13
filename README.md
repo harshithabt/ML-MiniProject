@@ -2,6 +2,15 @@
 
 ---
 
+**UE24CS352A – Machine Learning · Mini-Project**
+> **Name : Harshitha.B.T**
+> **SRN: PES1UG24AM118**
+
+Reference: Detecting and predicting earthquake ground motion directionality patterns using machine learning tools 
+> by Poulos & Silva-Lopez, Stanford
+
+---
+
 An exploratory, paper-informed machine-learning project that estimates differences in the orientation of maximum ground-motion response between recording stations from the same earthquake, using a limited subset of PEER NGA-West2 accelerograms and flatfile metadata.
 
 > **Scientific status:** The pipeline runs, but the current dataset is too small for a reliable evaluation under the paper's strict 5 km station-pairing criterion. This is an exploratory implementation, **not a verified exact reproduction** of the paper. The published paper metrics shown in `outputs/paper_aligned_results.json` are reference values only and are never presented as our own results.
