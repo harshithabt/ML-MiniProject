@@ -3,11 +3,14 @@
 ---
 
 **UE24CS352A – Machine Learning · Mini-Project**
+
 > **Name : Harshitha.B.T**
+
 > **SRN: PES1UG24AM118**
 
 Reference: Detecting and predicting earthquake ground motion directionality patterns using machine learning tools 
-> by Poulos & Silva-Lopez, Stanford
+
+- by Poulos & Silva-Lopez, Stanford
 
 ---
 
