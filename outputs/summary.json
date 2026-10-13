@@ -1,0 +1,56 @@
+{
+  "definition": "earth-fixed max 5%-damped SDOF PSA orientation, 0-179 deg; interstation axial angular difference 0-90 deg",
+  "period_s": 1.0,
+  "radius_km": 100.0,
+  "at2_rsns_with_numeric_azimuths": 93,
+  "usable_records": 93,
+  "metadata_matched": 93,
+  "pairs_within_5km": 8,
+  "pairs_within_radius": 269,
+  "events_within_radius": 9,
+  "failed_waveforms": [],
+  "evaluation": {
+    "status": "evaluated",
+    "train_pairs": 53,
+    "test_pairs": 216,
+    "train_events": 6,
+    "test_events": 3,
+    "features": [
+      "mean_magnitude",
+      "absdiff_magnitude",
+      "mean_rjb_km",
+      "absdiff_rjb_km",
+      "mean_vs30",
+      "absdiff_vs30",
+      "mean_pga",
+      "absdiff_pga",
+      "mean_pgv",
+      "absdiff_pgv",
+      "station_distance_km"
+    ],
+    "metrics": {
+      "constant_median": {
+        "mae_deg": 23.171296296296298,
+        "rmse_deg": 27.49099179057805,
+        "r2": -0.13726931225735206
+      },
+      "ridge": {
+        "mae_deg": 22.863678788619744,
+        "rmse_deg": 27.430543874379765,
+        "r2": -0.13227349538526356
+      },
+      "mlp": {
+        "mae_deg": 27.034663891842975,
+        "rmse_deg": 33.15717747099508,
+        "r2": -0.6543889161088412
+      }
+    }
+  },
+  "limitations": [
+    "Small non-random PEER RSN subset",
+    "1-second period is a chosen setting; verify against assigned paper",
+    "Not an exact paper reproduction",
+    "AT2 filename azimuth convention should be checked against metadata",
+    "Pairs from same event are dependent; event-held-out split used"
+  ]
+}

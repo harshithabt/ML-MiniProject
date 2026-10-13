@@ -1,0 +1,237 @@
+{
+  "seed": 42,
+  "paper_reference_metrics": {
+    "distance_benchmark": {
+      "r2": 0.025,
+      "mae_deg": 20.2
+    },
+    "ridge": {
+      "r2": 0.245,
+      "mae_deg": 16.9
+    },
+    "neural_network": {
+      "r2": 0.354,
+      "mae_deg": 13.2
+    },
+    "note": "Reference values transcribed from the supplied paper; do not treat as results from this dataset."
+  },
+  "primary_paper_aligned_experiment": {
+    "protocol": "paper target subset: magnitude >= 5 and site separation <= 5 km",
+    "n_pairs": 8,
+    "n_events": 5,
+    "status": "not_estimable_reliably",
+    "reason": "Only 8 pairs are available in the current 5 km subset; an 80/10/10 split would yield about 6 training, 1 validation and 1 test pair. No reliable model comparison is possible."
+  },
+  "supplementary_experiment": {
+    "protocol": "supplementary only: magnitude >= 5 and site separation <= 100 km; differs from paper's 5 km limit",
+    "n_pairs": 269,
+    "n_events": 9,
+    "evaluation": {
+      "n_train": 215,
+      "n_validation": 27,
+      "n_test": 27,
+      "split": "random example-level 80/10/10; not event-held-out",
+      "models": {
+        "distance_only_linear": {
+          "mae_deg": 22.700957114354075,
+          "rmse_deg": 25.700665857046822,
+          "r2": -0.0727525818089858
+        },
+        "ridge_alpha_1_5": {
+          "mae_deg": 22.91485599724877,
+          "rmse_deg": 26.23949557930203,
+          "r2": -0.11820590665984443
+        },
+        "mlp_validation_selected": {
+          "mae_deg": 23.15275001188975,
+          "rmse_deg": 26.467532280090825,
+          "r2": -0.13772609906583888
+        }
+      },
+      "mlp_best_validation_params": {
+        "hidden_layer_sizes": [
+          64,
+          32
+        ],
+        "learning_rate_init": 0.0005
+      },
+      "mlp_grid": [
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              16
+            ],
+            "learning_rate_init": 0.0005
+          },
+          "validation_mae_deg": 21.877755174796192
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              16
+            ],
+            "learning_rate_init": 0.001
+          },
+          "validation_mae_deg": 19.085393137546983
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              16
+            ],
+            "learning_rate_init": 0.005
+          },
+          "validation_mae_deg": 18.73858772231797
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              32
+            ],
+            "learning_rate_init": 0.0005
+          },
+          "validation_mae_deg": 20.63924111247505
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              32
+            ],
+            "learning_rate_init": 0.001
+          },
+          "validation_mae_deg": 19.698038567774574
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              32
+            ],
+            "learning_rate_init": 0.005
+          },
+          "validation_mae_deg": 19.117573011115795
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              64
+            ],
+            "learning_rate_init": 0.0005
+          },
+          "validation_mae_deg": 19.76082625896699
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              64
+            ],
+            "learning_rate_init": 0.001
+          },
+          "validation_mae_deg": 19.389813720593253
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              64
+            ],
+            "learning_rate_init": 0.005
+          },
+          "validation_mae_deg": 19.58582811355066
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              32,
+              16
+            ],
+            "learning_rate_init": 0.0005
+          },
+          "validation_mae_deg": 19.044604702783204
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              32,
+              16
+            ],
+            "learning_rate_init": 0.001
+          },
+          "validation_mae_deg": 19.61205706064321
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              32,
+              16
+            ],
+            "learning_rate_init": 0.005
+          },
+          "validation_mae_deg": 18.64930986753662
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              64,
+              32
+            ],
+            "learning_rate_init": 0.0005
+          },
+          "validation_mae_deg": 18.025116525126286
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              64,
+              32
+            ],
+            "learning_rate_init": 0.001
+          },
+          "validation_mae_deg": 18.215366996173934
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              64,
+              32
+            ],
+            "learning_rate_init": 0.005
+          },
+          "validation_mae_deg": 18.12255447728822
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              100
+            ],
+            "learning_rate_init": 0.0005
+          },
+          "validation_mae_deg": 19.089728873391376
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              100
+            ],
+            "learning_rate_init": 0.001
+          },
+          "validation_mae_deg": 19.028205416480734
+        },
+        {
+          "params": {
+            "hidden_layer_sizes": [
+              100
+            ],
+            "learning_rate_init": 0.005
+          },
+          "validation_mae_deg": 18.816121702862077
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Current waveform sample is a limited, non-random subset of NGA-West2.",
+    "The 5 km subset contains only 8 pairs from 5 events, insufficient for reliable training/testing.",
+    "Available pair features are not the paper's verified 21 selected features.",
+    "Random 80/10/10 split is used for supplementary comparison; pairs can share events/stations across splits.",
+    "Confirm orientation target and component azimuth convention against the paper before claiming exact reproduction."
+  ]
+}
