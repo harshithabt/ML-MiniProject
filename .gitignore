@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Generated run outputs (commit only curated aggregate outputs under outputs/)
+outputs_final/
+outputs_run*/
+
+# Large/private PEER source data — never commit
+*.AT2
+*.at2
+*.DT2
+*.VT2
+*.xlsx
+*.xls
+*.zip
+
+# Local secrets/configuration
+.env
+.DS_Store
