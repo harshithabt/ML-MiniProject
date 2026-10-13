@@ -92,7 +92,7 @@ These counts refer to the specific run recorded in this repository. If you rerun
 1. Upload this repository ZIP to Google Drive and extract it to:
    `MyDrive/Earthquake_ML_MiniProject/earthquake-ground-motion-directionality`
 2. Keep your PEER AT2 folder and NGA-West2 flatfile in your private Drive. The paths below are examples; adjust them to your own Drive layout.
-3. Open `run_in_colab.ipynb` and run its cells. The notebook installs dependencies, runs the pipeline, and writes results to your Drive.
+3. Open `run_googlecolab.ipynb` and run its cells. The notebook installs dependencies, runs the pipeline, and writes results to your Drive.
 4. To run the paper-informed experiment after the pipeline has generated both pair CSVs, execute:
 
 ```bash
@@ -103,12 +103,12 @@ For local Python, install dependencies and run:
 
 ```bash
 python -m pip install -r requirements.txt
-python run.py --at2 "/path/to/UnscaledAccRecord8878" \
+python directionality_analysis.py --at2 "/path/to/UnscaledAccRecord8878" \
   --flatfile "/path/to/Updated_NGA_West2_Flatfile_RotD50_d005_public_version.xlsx" \
   --out outputs
 ```
 
-Check `python run.py --help` for the available arguments. The notebook currently calls `src/pipeline.py`; `run.py` is an alternate modular entry point. Keep outputs from each run together and do not mix files from different dataset runs.
+Check `python directionality_analysis.py --help` for the available arguments. The notebook currently calls `src/pipeline.py`; `directionality_analysis.py` is an alternate modular entry point. Keep outputs from each run together and do not mix files from different dataset runs.
 
 ---
 
@@ -140,11 +140,11 @@ The modular pipeline also recorded an event-held-out split on the 269-pair 100 k
 | Ridge regression (α = 10) | 22.86 | 27.43 | -0.132 |
 | MLP (32, 16) | 27.04 | 33.16 | -0.654 |
 
-The test set is dominated by a small number of events and is imbalanced by event contribution, so these are unstable exploratory results, not a robust performance claim. See `reports/FINAL_REPORT.md` and the JSON files in `outputs/`.
+The test set is dominated by a small number of events and is imbalanced by event contribution, so these are unstable exploratory results, not a robust performance claim. See files in `outputs/`.
 
 ## Paper-reported reference values
 
-The supplied paper reports the following reference results (as transcribed for comparison): distance benchmark R² = 0.025, MAE = 20.2°; Ridge R² = 0.245, MAE = 16.9°; neural network R² = 0.354, MAE = 13.2°. These values are **from the paper, not from our run**. The paper also reports feature selection to 21 predictors; the current feature set has not been verified to match those 21 predictors.
+The supplied paper reports the following reference results (as transcribed for comparison): distance benchmark R² = 0.025, MAE = 20.2°; Ridge R² = 0.245, MAE = 16.9°; neural network R² = 0.354, MAE = 13.2°. These values are **from the paper**. The paper also reports feature selection to 21 predictors; the current feature set has not been verified to match those 21 predictors.
 
 ---
 
@@ -163,7 +163,6 @@ The supplied paper reports the following reference results (as transcribed for c
 
 ## Reproducibility and integrity
 
-- Keep the supplied research paper in your private project records and cite it in your submission according to your course's required style.
 - Do not commit PEER raw waveforms, flatfiles, credentials, or private Drive paths.
 - The `outputs/` folder contains aggregate recorded results and plots only; it does not contain the original raw dataset or full pair-level records.
 - Rerun from raw inputs to recreate full CSV outputs. Save a separate copy of each run's `summary.json` so results are traceable to the data used.
@@ -172,6 +171,5 @@ The supplied paper reports the following reference results (as transcribed for c
 
 ## Reference
 
-*Detecting and Predicting Earthquake Ground Motion Directionality Patterns Using Machine Learning Tools.* Course-provided research paper (PDF). Use the author, venue and year details from the first page of the supplied PDF when preparing the formal bibliography; those fields have intentionally not been guessed here.
-
+*Detecting and Predicting Earthquake Ground Motion Directionality Patterns Using Machine Learning Tools.* College Course-provided research paper (PDF).
 ---
