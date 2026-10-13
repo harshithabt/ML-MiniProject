@@ -16,33 +16,41 @@ An exploratory, paper-informed machine-learning project that estimates differenc
 ## Repository structure
 
 ```text
-earthquake-ground-motion-directionality/
+ML-MiniProject/
+├── .gitignore
 ├── README.md
 ├── requirements.txt
-├── directionality_analysis.py     # modular pipeline entry point
-├── run_googlecolab.ipynb          # Google Colab workflow
-├── COLAB_RUN.txt                  # command-line run example
-├── paper_aligned_experiment.py    # strict 5 km check + supplementary experiment
+├── COLAB_RUN.md
+├── directionality_analysis.py
+├── paper_aligned_experiment.py
+│
+├── 01_earthquake_directionality_foundations.ipynb
+├── 02_rotation_mathematics_validation.ipynb
+├── 03_nga_west2_dataset_inspection.ipynb
+├── run_googlecolab.ipynb
+│
 ├── src/
 │   ├── __init__.py
-│   ├── records.py                 # AT2 inventory and component pairing
-│   ├── waveforms.py               # AT2 parsing and response/orientation calculation
-│   ├── metadata.py                # NGA-West2 flatfile loading
-│   ├── pairs.py                   # same-event pair generation
-│   ├── models.py                  # exploratory baseline/Ridge/MLP evaluation
-│   └── pipeline.py                # end-to-end pipeline used by the notebook
-├── reports/
-│   ├── FINAL_REPORT.md            # methods, results and limitations
-│   └── DEMO_NOTES.md              # presentation/viva notes
+│   ├── records.py
+│   ├── waveforms.py
+│   ├── metadata.py
+│   ├── pairs.py
+│   ├── models.py
+│   └── pipeline.py
+│
 └── outputs/
-    ├── README.md                  # output definitions and provenance
-    ├── results_summary.json       # recorded aggregate results (not raw records)
-    ├── paper_aligned_results.json # paper reference vs current experiment
     ├── experiment_comparison.csv
-    └── figures/
-        ├── event_held_out_mae.png
-        ├── supplementary_mae.png
-        └── available_pair_counts.png
+    ├── model_comparison_mae.png
+    ├── orientations.csv
+    ├── outputs_final.txt
+    ├── paper_aligned_results.json
+    ├── real_acceleration_traces.png
+    ├── records_with_metadata.csv
+    ├── rotational_orientation_distribution.png
+    ├── rotational_orientation_results.csv
+    ├── same_event_pairs.csv
+    ├── same_event_pairs_within_5km.csv
+    └── summary.json
 ```
 
 The PEER waveform files and flatfiles are **not included**. They are large and subject to their own access/redistribution terms. Keep them locally or in your private Drive; do not commit raw data to GitHub.
