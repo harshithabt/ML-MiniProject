@@ -1,8 +1,12 @@
 # ML-Detecting and predicting earthquake ground motion directionality patterns
 
+---
+
 An exploratory, paper-informed machine-learning project that estimates differences in the orientation of maximum ground-motion response between recording stations from the same earthquake, using a limited subset of PEER NGA-West2 accelerograms and flatfile metadata.
 
 > **Scientific status:** The pipeline runs, but the current dataset is too small for a reliable evaluation under the paper's strict 5 km station-pairing criterion. This is an exploratory implementation, **not a verified exact reproduction** of the paper. The published paper metrics shown in `outputs/paper_aligned_results.json` are reference values only and are never presented as our own results.
+
+---
 
 ## What this project does
 
@@ -12,6 +16,8 @@ An exploratory, paper-informed machine-learning project that estimates differenc
 4. Builds same-earthquake station pairs and calculates axial orientation differences in the range 0°–90°.
 5. Compares a distance-only linear benchmark, Ridge regression and an MLP, with both event-held-out exploratory evaluation and a paper-informed supplementary experiment.
 6. Exports machine-readable CSV/JSON outputs and a plot.
+
+---
 
 ## Repository structure
 
@@ -55,6 +61,8 @@ ML-MiniProject/
 
 The PEER waveform files and flatfiles are **not included**. They are large and subject to their own access/redistribution terms. Keep them locally or in your private Drive; do not commit raw data to GitHub.
 
+---
+
 ## Dataset used in the current run
 
 - Source: a limited, non-random subset downloaded from PEER NGA-West2.
@@ -87,6 +95,8 @@ python run.py --at2 "/path/to/UnscaledAccRecord8878" \
 ```
 
 Check `python run.py --help` for the available arguments. The notebook currently calls `src/pipeline.py`; `run.py` is an alternate modular entry point. Keep outputs from each run together and do not mix files from different dataset runs.
+
+---
 
 ## Results at a glance
 
@@ -122,6 +132,8 @@ The test set is dominated by a small number of events and is imbalanced by event
 
 The supplied paper reports the following reference results (as transcribed for comparison): distance benchmark R² = 0.025, MAE = 20.2°; Ridge R² = 0.245, MAE = 16.9°; neural network R² = 0.354, MAE = 13.2°. These values are **from the paper, not from our run**. The paper also reports feature selection to 21 predictors; the current feature set has not been verified to match those 21 predictors.
 
+---
+
 ## Methodological caveats
 
 - The 5 km primary subset is too small to estimate predictive performance reliably.
@@ -133,6 +145,8 @@ The supplied paper reports the following reference results (as transcribed for c
 - Pair observations are dependent because stations and events can recur; event-held-out evaluation is more conservative but remains unstable with only nine events.
 - No claim is made that the model is suitable for real-time prediction, earthquake early warning, or engineering decisions.
 
+---
+
 ## Reproducibility and integrity
 
 - Keep the supplied research paper in your private project records and cite it in your submission according to your course's required style.
@@ -140,6 +154,10 @@ The supplied paper reports the following reference results (as transcribed for c
 - The `outputs/` folder contains aggregate recorded results and plots only; it does not contain the original raw dataset or full pair-level records.
 - Rerun from raw inputs to recreate full CSV outputs. Save a separate copy of each run's `summary.json` so results are traceable to the data used.
 
+---
+
 ## Reference
 
 *Detecting and Predicting Earthquake Ground Motion Directionality Patterns Using Machine Learning Tools.* Course-provided research paper (PDF). Use the author, venue and year details from the first page of the supplied PDF when preparing the formal bibliography; those fields have intentionally not been guessed here.
+
+---
