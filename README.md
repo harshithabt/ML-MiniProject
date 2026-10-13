@@ -19,8 +19,8 @@ An exploratory, paper-informed machine-learning project that estimates differenc
 earthquake-ground-motion-directionality/
 ├── README.md
 ├── requirements.txt
-├── run.py                         # modular pipeline entry point
-├── run_in_colab.ipynb             # Google Colab workflow
+├── directionality_analysis.py     # modular pipeline entry point
+├── run_googlecolab.ipynb          # Google Colab workflow
 ├── COLAB_RUN.txt                  # command-line run example
 ├── paper_aligned_experiment.py    # strict 5 km check + supplementary experiment
 ├── src/
@@ -33,7 +33,6 @@ earthquake-ground-motion-directionality/
 │   └── pipeline.py                # end-to-end pipeline used by the notebook
 ├── reports/
 │   ├── FINAL_REPORT.md            # methods, results and limitations
-│   ├── REPORT_TEMPLATE.md         # reusable report template
 │   └── DEMO_NOTES.md              # presentation/viva notes
 └── outputs/
     ├── README.md                  # output definitions and provenance
