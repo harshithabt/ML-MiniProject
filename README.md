@@ -30,9 +30,11 @@ ML-MiniProject/
 ├── directionality_analysis.py
 ├── paper_aligned_experiment.py
 │
-├── 01_earthquake_directionality_foundations.ipynb
-├── 02_rotation_mathematics_validation.ipynb
-├── 03_nga_west2_dataset_inspection.ipynb
+├── notebooks/
+│   ├── 01_earthquake_directionality_foundations.ipynb
+│   ├── 02_rotation_mathematics_validation.ipynb
+│   └── 03_nga_west2_dataset_inspection.ipynb
+|
 ├── run_googlecolab.ipynb
 │
 ├── src/
