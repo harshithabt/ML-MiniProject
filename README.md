@@ -171,5 +171,6 @@ The supplied paper reports the following reference results (as transcribed for c
 
 ## Reference
 
-*Detecting and Predicting Earthquake Ground Motion Directionality Patterns Using Machine Learning Tools.* College Course-provided research paper (PDF).
+*Detecting and Predicting Earthquake Ground Motion Directionality Patterns Using Machine Learning Tools, College Course-provided research paper (PDF).*
+
 ---
